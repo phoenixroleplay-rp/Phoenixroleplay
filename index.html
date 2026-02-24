@@ -1,228 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Phoenix Roleplay</title>
-  <link rel="icon" type="image/png" href="images/logo.png">
-  <link rel="shortcut icon" type="image/png" href="images/logo.png">
-  <link rel="stylesheet" href="css/styles.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-
-<script>
-  const reveals = document.querySelectorAll(
-    ".reveal, .reveal-zoom, .reveal-left, .reveal-right"
-  );
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
-  reveals.forEach(el => observer.observe(el));
-</script>
-
-
-<!-- LOADER START -->
-<div id="preloader">
-  <div class="loader-content">
-    <h1 class="loader-title">
-      <span>P</span>
-      <span>H</span>
-      <span>O</span>
-      <span>E</span>
-      <span>N</span>
-      <span>I</span>
-      <span>X</span>
-      <span>&nbsp;</span>
-      <span>R</span>
-      <span>I</span>
-      <span>S</span>
-      <span>E</span>
-    </h1>
-
-    <div class="wrapper">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="shadow"></div>
-      <div class="shadow"></div>
-      <div class="shadow"></div>
-    </div>
-  </div>
-</div>
-<!-- LOADER END -->
-
-
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <div class="nav-container">
+    
     <div class="nav-logo">
-      <img src="images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Phoenix Logo">
     </div>
-  
+
     <ul class="nav-menu">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="server.html">Server</a></li>
       <li><a href="rules.html">Rules</a></li>
-      <li><a href="forum.html">FORUM</a></li>
+      <li><a href="forum.html">Forum</a></li>
     </ul>
 
-    <!-- SERVER STATUS -->
-    <div class="server-status">
-      SERVER STATUS: <span>ONLINE</span>
-    </div>
-
-    <div class="menu-toggle">
-      ☰
-    </div>
+    <div class="menu-toggle">☰</div>
 
   </div>
 </nav>
 
-<div class="particles"></div>
 
-
-
-<section class="hero">
+<!-- ================= HERO ================= -->
+<section class="hero reveal">
   <div class="hero-content">
-
     <h1>WELCOME TO THE PHOENIX</h1>
 
-    <p class="hero-desc">
+    <p>
       Phoenix Rise is a next-generation GTA San Andreas Multiplayer roleplay
       server where stories are forged, empires are built, and every decision
-      shapes your destiny. From intense street roleplay to organized factions,
-      Phoenix Rise delivers a serious, immersive RP experience driven by
-      community, realism, and ambition.
+      shapes your destiny.
     </p>
-    <a href="https://discord.gg/2nyASzjTf"
-       target="_blank"
-       class="hero-btn">
-       JOIN OUR COMMUNITY
+
+    <a href="https://discord.gg/2nyASzjTf" target="_blank" class="hero-btn">
+      JOIN OUR COMMUNITY
     </a>
   </div>
 </section>
 
-<section class="team-section">
-  <div class="team-header">
+
+<!-- ================= TEAM ================= -->
+<section class="team-section reveal">
+  <div class="container">
+
     <h2>MEET OUR SERVER TEAM</h2>
-    <p>
-      We are a team of dedicated professionals that cares about the community,
-      we love GTA San Andreas! We offer the best service to our customers and always
-      looking for your feedback.
-    </p>
-  </div>
 
-  <div class="team-grid">
+    <div class="team-grid">
 
-    <!-- Founder -->
-    <div class="team-member">
-      <div class="staff-image">
+      <div class="team-member">
         <img src="images/team/terry.jpg" alt="Terry">
+        <h3>Terry</h3>
+        <span class="role">Founder</span>
+        <p>Founder of Phoenix Rise. Leads vision and development.</p>
       </div>
-      <h3>Terry</h3>
-      <span class="role founder">Founder</span>
-      <p>
-        He founded Phoenix Rise and laid the foundation of the server. Responsible
-        for long-term vision and major decisions.
-      </p>
-    </div>
 
-    <!-- Co Founder -->
-    <div class="team-member">
-      <div class="staff-image">
+      <div class="team-member">
         <img src="images/team/marcin.jpeg" alt="Marcin">
+        <h3>Marcin Rox</h3>
+        <span class="role">Co Founder</span>
+        <p>Oversees administration and staff operations.</p>
       </div>
-      <h3>Marcin Rox</h3>
-      <span class="role cofounder">Co Founder</span>
-      <p>
-        Oversees all administrators. Ensures rules are enforced fairly and
-        staff perform their duties professionally.
-      </p>
-    </div>
 
+    </div>
   </div>
 </section>
 
 
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="footer-container">
 
-    <!-- RIGHTS -->
-    <div class="footer-col">
+    <div>
       <h4>RIGHTS</h4>
       <p>
-        Your server is not affiliated with or endorsed by Take-Two, Rockstar
-        North Interactive, or any other rights holder. All the used trademarks
-        belong to their respective owners.
+        Not affiliated with Take-Two or Rockstar Games.
       </p>
     </div>
 
-    <!-- FOLLOW US -->
-    <div class="footer-col">
+    <div>
       <h4>FOLLOW US</h4>
       <ul>
         <li><a href="https://discord.gg/2nyASzjTf">Discord</a></li>
-        <li><a href="https://www.facebook.com/share/1Ha8A7fpet/">Facebook</a></li>
-        <li><a href="#">TikTok</a></li>
-        <li><a href="https://youtube.com/@phoenixriseroleplay?si=cSsHaofqB522xa_9">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">YouTube</a></li>
       </ul>
     </div>
 
-    <!-- NAVIGATION -->
-    <div class="footer-col">
+    <div>
       <h4>NAVIGATION</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="server.html">Server</a></li>
         <li><a href="rules.html">Rules</a></li>
-        <li><a href="forum.html">Forum</a></li>
-        <li><a href="#">Contact</a></li>
       </ul>
     </div>
 
   </div>
 
-  <!-- BOTTOM BAR -->
   <div class="footer-bottom">
-    <span>© 2026 Phoenix Rise Roleplay. Made by Johan Libert</span>
-    <div class="footer-links">
-      <a href="#">Terms of Use</a>
-      <a href="#">Privacy Policy</a>
-    </div>
+    © 2026 Phoenix Rise Roleplay
   </div>
 </footer>
 
 
+<!-- ================= SCRIPTS ================= -->
 <script>
-  window.addEventListener("load", function() {
-    setTimeout(function() {
-      document.getElementById("preloader").classList.add("hide");
-    }, 3000); // 3 seconds
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Mobile Menu
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-menu");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
   });
 
+  // Scroll Reveal
+  const reveals = document.querySelectorAll(".reveal");
 
-  document.querySelector(".menu-toggle").addEventListener("click", function(){
-    document.querySelector(".nav-menu").classList.toggle("active");
-  });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.15 });
 
+  reveals.forEach(el => observer.observe(el));
 
+});
 
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
-
