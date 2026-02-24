@@ -5,8 +5,60 @@
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="shortcut icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+
+<script>
+  const reveals = document.querySelectorAll(
+    ".reveal, .reveal-zoom, .reveal-left, .reveal-right"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+
+<!-- LOADER START -->
+<div id="preloader">
+  <div class="loader-content">
+    <h1 class="loader-title">
+      <span>P</span>
+      <span>H</span>
+      <span>O</span>
+      <span>E</span>
+      <span>N</span>
+      <span>I</span>
+      <span>X</span>
+      <span>&nbsp;</span>
+      <span>R</span>
+      <span>I</span>
+      <span>S</span>
+      <span>E</span>
+    </h1>
+
+    <div class="wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+</div>
+<!-- LOADER END -->
+
 
 <nav class="navbar">
   <div class="nav-container">
@@ -24,6 +76,10 @@
     <!-- SERVER STATUS -->
     <div class="server-status">
       SERVER STATUS: <span>ONLINE</span>
+    </div>
+
+    <div class="menu-toggle">
+      ☰
     </div>
 
   </div>
@@ -53,7 +109,6 @@
   </div>
 </section>
 
-
 <section class="team-section">
   <div class="team-header">
     <h2>MEET OUR SERVER TEAM</h2>
@@ -66,40 +121,29 @@
 
   <div class="team-grid">
 
+    <!-- Founder -->
     <div class="team-member">
-      <img src="images/team/terry.png" alt="Terry">
+      <div class="staff-image">
+        <img src="images/team/terry.jpg" alt="Terry">
+      </div>
       <h3>Terry</h3>
-      <span>Founder</span>
+      <span class="role founder">Founder</span>
       <p>
-        He founded Phoenix Rise and laid the foundation of the server. Responsible for long-term vision, major decisions, and ensuring the community grows in the right direction.
+        He founded Phoenix Rise and laid the foundation of the server. Responsible
+        for long-term vision and major decisions.
       </p>
     </div>
 
+    <!-- Co Founder -->
     <div class="team-member">
-      <img src="images/team/marcin.jpeg" alt="Marcin">
+      <div class="staff-image">
+        <img src="images/team/marcin.jpeg" alt="Marcin">
+      </div>
       <h3>Marcin Rox</h3>
-      <span>Co Founder</span>
+      <span class="role cofounder">Co Founder</span>
       <p>
-        Responsible for all administrators. Ensures rules are enforced fairly and that staff members perform their duties professionally and consistently.
-      </p>
-    </div>
-
-    
-    <div class="team-member">
-      <img src="images/team/kane.jpg" alt="Toji">
-      <h3>Toji</h3>
-      <span>Server manager</span>
-      <p>
-        Oversees daily server operations, staff coordination, and player experience. Ensures everything runs smoothly and according to the server’s standards.
-      </p>
-    </div>
-
-    <div class="team-member">
-      <img src="images/team/lawlet.jpeg" alt="L Lawliet">
-      <h3>L Lawliet</h3>
-      <span>Lead developer</span>
-      <p>
-        Responsible for all administrators. Ensures rules are enforced fairly and that staff members perform their duties professionally and consistently.
+        Oversees all administrators. Ensures rules are enforced fairly and
+        staff perform their duties professionally.
       </p>
     </div>
 
@@ -156,10 +200,26 @@
 </footer>
 
 
+<script>
+  window.addEventListener("load", function() {
+    setTimeout(function() {
+      document.getElementById("preloader").classList.add("hide");
+    }, 3000); // 3 seconds
+  });
+
+
+  document.querySelector(".menu-toggle").addEventListener("click", function(){
+    document.querySelector(".nav-menu").classList.toggle("active");
+  });
+
+
+
+</script>
 
 
 </body>
 </html>
+
 
 
 
