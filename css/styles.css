@@ -154,13 +154,6 @@ body {
   letter-spacing: 6px;
 }
 
-.team-header p {
-  max-width: 720px;
-  margin: 14px auto 60px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #d6d6d6;
-}
 
 /* TEAM GRID */
 
@@ -173,59 +166,24 @@ body {
 
 
 /* NAME */
-.team-member h3 {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 17px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: #ffffff;
-  transition: text-shadow 0.35s ease;
-}
 
 
 /* ROLE */
-.team-member span {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.65);
-}
+
 
 /* DESCRIPTION */
-.team-member p {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #d0d0d0;
-  max-width: 260px;
-  margin: auto;
-}
 
 /* =========================
    HOVER EFFECTS (LIKE BEFORE)
 ========================= */
 
 /* Lift whole block */
-.team-member:hover {
-  transform: translateY(-6px);
-}
 
-.team-member:hover img {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow:
-    0 0 0 4px rgba(0,0,0,1),
-    0 0 0 6px rgba(255,255,255,0.4),
-    0 0 45px rgba(0,0,0,1);
-}
+
 
 
 
 /* Name glow */
-.team-member:hover h3 {
-  text-shadow:
-    0 0 6px rgba(255,0,0,0.6),
-    0 0 14px rgba(255,0,0,0.5);
-}
 
 
 /* =========================
@@ -775,18 +733,9 @@ body {
 }
 
 
-@media (max-width: 900px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-}
 
-@media (max-width: 520px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
+
 
 @media (max-width: 900px) {
   .server-about-grid {
@@ -864,161 +813,15 @@ a, button, img {
 }
 
 
-.team-grid:hover .team-member {
-  opacity: 0.4;
-}
 
-.team-grid:hover .team-member:hover {
-  opacity: 1;
-}
-
-
-.team-member {
-  position: relative;
-  padding: 40px 25px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,0,0,0.25);
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.45s ease;
-}
 
 /* Animated red glow border */
 
 
-.team-member:hover::before {
-  opacity: 1;
-}
+
 
 /* 3D lift */
-.team-member:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.8),
-    0 0 30px rgba(255,0,0,0.3);
-}
 
-.team-member img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  border: 3px solid rgba(255,255,255,0.15);
-  transition: all 0.4s ease;
-}
-
-.team-member:hover img {
-  transform: scale(1.08);
-  border-color: #ff2a2a;
-  box-shadow: 0 0 25px rgba(255,0,0,0.6);
-}
-
-.team-member span {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 6px 14px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  background: linear-gradient(180deg, #ff2a2a, #8b0000);
-  border-radius: 50px;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 0 12px rgba(255,0,0,0.5);
-}
-
-/* =========================
-   PREMIUM STAFF CARDS
-========================= */
-
-.team-grid {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 50px;
-}
-
-.team-member {
-  position: relative;
-  padding: 50px 30px;
-  border-radius: 25px;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,0,0,0.25);
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.5s ease;
-}
-
-
-
-.team-member:hover::before {
-  opacity: 1;
-}
-
-.team-member:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow:
-    0 25px 50px rgba(0,0,0,0.9),
-    0 0 35px rgba(255,0,0,0.3);
-}
-
-/* Staff Image */
-.staff-image img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255,255,255,0.15);
-  margin-bottom: 20px;
-  transition: all 0.4s ease;
-}
-
-.team-member:hover img {
-  transform: scale(1.1);
-  border-color: #ff2a2a;
-  box-shadow: 0 0 30px rgba(255,0,0,0.7);
-}
-
-/* Name */
-.team-member h3 {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-}
-
-/* Role Badge */
-.role {
-  display: inline-block;
-  padding: 6px 16px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  border-radius: 40px;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-/* Role Colors */
-.founder {
-  background: linear-gradient(180deg, gold, orange);
-  color: black;
-}
-
-.cofounder {
-  background: linear-gradient(180deg, #ff2a2a, #8b0000);
-  color: white;
-}
-
-/* Description */
-.team-member p {
-  font-size: 13px;
-  line-height: 1.7;
-  color: #d0d0d0;
-}
 
 /* =========================
    HERO BUTTON (SLIDE ANIMATION)
