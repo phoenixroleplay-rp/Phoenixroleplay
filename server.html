@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
 <!-- LOADER START -->
 <div id="preloader">
@@ -206,52 +208,102 @@
 
 <script>
 
-/* ==============================
-   PRELOADER
-============================== */
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    const loader = document.getElementById("preloader");
-    if (loader) {
-      loader.classList.add("hide");
-    }
-  }, 100); // adjust timing if you want
-});
-
-
-/* ==============================
-   HAMBURGER MENU (Uiverse)
-============================== */
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.querySelector(".nav-menu");
-
-if (menuToggle && navMenu) {
-  menuToggle.addEventListener("change", function () {
-    navMenu.classList.toggle("active");
-    document.body.classList.toggle("no-scroll");
+  /* ==============================
+     PRELOADER
+  ============================== */
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const loader = document.getElementById("preloader");
+      if (loader) {
+        loader.classList.add("hide");
+      }
+    }, 100); // adjust timing if you want
   });
+
+
+  /* ==============================
+     HAMBURGER MENU (Uiverse)
+  ============================== */
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("change", function () {
+      navMenu.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  }
+
+
+  /* ==============================
+     SCROLL REVEAL (Premium Smooth)
+  ============================== */
+  const animatedElements = document.querySelectorAll(
+    "h1, h2, h3, p, .hero-btn, .feature-box, .forum-card, .team-member, .server-image img, .rule-block"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  animatedElements.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
+  });
+
+
+
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+
+  const dot = document.querySelector(".cursor-dot");
+  const outline = document.querySelector(".cursor-outline");
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let outlineX = 0;
+  let outlineY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
+  });
+
+  function animate() {
+    outlineX += (mouseX - outlineX) * 0.15;
+    outlineY += (mouseY - outlineY) * 0.15;
+
+    outline.style.left = outlineX + "px";
+    outline.style.top = outlineY + "px";
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  const hoverElements = document.querySelectorAll("a, button, .staff-card");
+
+  hoverElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      outline.style.width = "60px";
+      outline.style.height = "60px";
+      outline.style.borderColor = "#ffffff";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      outline.style.width = "35px";
+      outline.style.height = "35px";
+      outline.style.borderColor = "#ff2a2a";
+    });
+  });
+
 }
-
-
-/* ==============================
-   SCROLL REVEAL (Premium Smooth)
-============================== */
-const animatedElements = document.querySelectorAll(
-  "h1, h2, h3, p, .hero-btn, .feature-box, .forum-card, .team-member, .server-image img, .rule-block"
-);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.15 });
-
-animatedElements.forEach(el => {
-  el.classList.add("hidden");
-  observer.observe(el);
-});
 
 </script>
 
