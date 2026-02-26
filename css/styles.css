@@ -140,19 +140,6 @@ body {
 /* =========================
    TEAM SECTION
 ========================= */
-.team-section {
-  padding: 100px 20px;
-  background:
-    linear-gradient(rgba(120,0,0,0.75), rgba(0,0,0,0.95)),
-    url("../images/team-bg.jpg") center/cover no-repeat;
-  text-align: center;
-}
-
-.team-header h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 36px;
-  letter-spacing: 6px;
-}
 
 
 /* TEAM GRID */
@@ -698,16 +685,6 @@ body {
   animation-delay: 0.15s;
 }
 
-
-.team-member {
-  opacity: 0;
-  animation: fadeZoom 0.9s ease forwards;
-}
-
-.team-member:nth-child(1) { animation-delay: 0.1s; }
-.team-member:nth-child(2) { animation-delay: 0.2s; }
-.team-member:nth-child(3) { animation-delay: 0.3s; }
-.team-member:nth-child(4) { animation-delay: 0.4s; }
 
 
 .city-image {
@@ -1325,6 +1302,20 @@ section {
 /* =========================
    STAFF CARD (Uiverse Style)
 ========================= */
+.team-section {
+  padding: 100px 20px;
+  background:
+    linear-gradient(rgba(120,0,0,0.75), rgba(0,0,0,0.95)),
+    url("../images/team-bg.jpg") center/cover no-repeat;
+  text-align: center;
+}
+
+.team-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 6px;
+}
+
 .staff-card {
   position: relative;   /* ADD THIS */
   width: 100%;
