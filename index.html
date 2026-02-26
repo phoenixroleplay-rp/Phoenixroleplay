@@ -9,22 +9,8 @@
 </head>
 <body>
 
-<!-- REVEAL ANIMATION SCRIPT -->
-<script>
-  const reveals = document.querySelectorAll(
-    ".reveal, .reveal-zoom, .reveal-left, .reveal-right"
-  );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, { threshold: 0.15 });
 
-  reveals.forEach(el => observer.observe(el));
-</script>
 
 <!-- LOADER -->
 <div id="preloader">
@@ -54,9 +40,6 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
-    <div class="nav-logo">
-      <img src="images/logo.png" alt="Logo">
-    </div>
 
     <ul class="nav-menu">
       <li><a href="index.html" class="active">Home</a></li>
@@ -69,7 +52,17 @@
       SERVER STATUS: <span>ONLINE</span>
     </div>
 
-    <div class="menu-toggle">☰</div>
+    <!-- From Uiverse.io by JulanDeAlb --> 
+    <label class="hamburger">
+      <input type="checkbox" id="menuToggle" >
+      <svg viewBox="0 0 32 32">
+
+        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+
+        <path class="line" d="M7 16 27 16"></path>
+      </svg>
+    </label>
+
   </div>
 </nav>
 
@@ -160,17 +153,59 @@
 </footer>
 
 <!-- SCRIPTS -->
-<script>
-  window.addEventListener("load", function() {
-    setTimeout(function() {
-      document.getElementById("preloader").classList.add("hide");
-    }, 3000);
-  });
 
-  document.querySelector(".menu-toggle").addEventListener("click", function(){
-    document.querySelector(".nav-menu").classList.toggle("active");
+<script>
+
+/* ==============================
+   PRELOADER
+============================== */
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    const loader = document.getElementById("preloader");
+    if (loader) {
+      loader.classList.add("hide");
+    }
+  }, 100); // adjust timing if you want
+});
+
+
+/* ==============================
+   HAMBURGER MENU (Uiverse)
+============================== */
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("change", function () {
+    navMenu.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
   });
+}
+
+
+/* ==============================
+   SCROLL REVEAL (Premium Smooth)
+============================== */
+const animatedElements = document.querySelectorAll(
+  "h1, h2, h3, p, .hero-btn, .feature-box, .forum-card, .team-member, .server-image img, .rule-block"
+);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+animatedElements.forEach(el => {
+  el.classList.add("hidden");
+  observer.observe(el);
+});
+
 </script>
+
+
 
 </body>
 </html>
