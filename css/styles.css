@@ -1518,3 +1518,142 @@ section {
   }
 
 }
+
+/* =========================
+   STAFF CARD (Uiverse Style)
+========================= */
+.staff-card {
+  position: relative;   /* ADD THIS */
+  width: 100%;
+  max-width: 320px;
+  background: linear-gradient(145deg, #1a0000, #0b0b0b);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.333);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(229, 70, 70, 0.25);
+}
+
+/* Header */
+.staff-header {
+  background: linear-gradient(135deg, #ee2121, #8b0000);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Profile Image */
+.staff-pfp {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #414141;
+}
+
+/* Name + Role */
+.staff-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.staff-role {
+  font-size: 14px;
+  opacity: 0.8;
+  color: white;
+}
+
+/* Description Box */
+.staff-description {
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.9);
+  border-top: 1px solid rgba(255, 0, 0, 0.15);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+}
+/* =========================
+   STAFF BLOB FIXED
+========================= */
+
+.staff-card .blob {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #ff2a2a 0%, #ff0000 40%, transparent 70%);
+  border-radius: 50%;
+  top: -40px;
+  right: -40px;
+  filter: blur(30px);
+  opacity: 0.8;
+  z-index: 0;
+  animation: blob-float 8s infinite ease-in-out;
+}
+
+/* Keep content above blob */
+.staff-card > *:not(.blob) {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes blob-float {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-30px, 30px); }
+  100% { transform: translate(0, 0); }
+}
+
+
+/* =========================
+   CUSTOM CURSOR (DESKTOP ONLY)
+========================= */
+
+/* Hide default cursor only on devices that support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff2a2a;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-outline {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #ff2a2a;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, border 0.3s ease;
+  }
+}
+
+/* Hide completely on touch devices */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto;
+  }
+}
+
